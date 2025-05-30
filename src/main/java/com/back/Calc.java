@@ -2,21 +2,21 @@ package com.back;
 
 public class Calc {
     public static int run(String expression) {
-        if(expression.equals("2 - 1")){
-            return 1;
-        } else if (expression.equals("3 - 1")) {
-            return 2;
-        } else if (expression.equals("100 - 20")) {
-            return 80;
-        } else {
+        if(expression.contains("+")){
             String[] expressionBits = expression.split("\\+");
 
             int num1 = Integer.parseInt(expressionBits[0].trim());
             int num2 = Integer.parseInt(expressionBits[1].trim());
-            int sum = num1 + num2;
-
-            return sum;
+            return num1 + num2;
         }
+        else if(expression.contains("-")){
+            String[] expressionBits = expression.split("\\-");
+
+            int num1 = Integer.parseInt(expressionBits[0].trim());
+            int num2 = Integer.parseInt(expressionBits[1].trim());
+            return num1 - num2;
+        }
+        return 0;
     }
 }
 

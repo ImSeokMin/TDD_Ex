@@ -51,6 +51,8 @@ public class CalcTest {
     void t7() {
         assertThat(Calc.run("100 - 20")).isEqualTo(80);
     }
+
+
 }
 
 
